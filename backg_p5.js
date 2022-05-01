@@ -1,4 +1,5 @@
 let sketch3 = function(p){
+    var count = 0;
     p.setup = function setup() {
         let c = p.createCanvas(p.windowWidth,p.windowHeight);
         p.background(0);
@@ -8,24 +9,28 @@ let sketch3 = function(p){
         p.stroke(0, 128, 0);
         p.strokeWeight(2);
         p.frameRate(30);
+        count = 0;
     };
     p.draw = function draw(){
-        if(p.frameCount%100==0){
+        if(count%100==0){
             p.stroke(p.random(128,255), p.random(128), p.random(128,255));
         }
         //線を引く(x座標は変化するのでi,y座標は一定、もう一点は固定x=240,y=60)
-        p.line((p.frameCount%100)*(p.windowWidth/100), 75, p.windowWidth/2, p.windowHeight/2);
+        p.line((count%100)*(p.windowWidth/100)+5, 75, p.windowWidth/2, p.windowHeight/2);
         //円を描く(x,y,幅、高さ)
-        p.ellipse((p.frameCount%100)*(p.windowWidth/100),75, 10, 10);
+        p.ellipse((count%100)*(p.windowWidth/100)+5,75, 10, 10);
         
         
         //下の部分を描く
         //円を描く(x,y,幅、高さ)
-        p.line((p.frameCount%100)*(p.windowWidth/100), p.height-20, p.windowWidth/2, p.windowHeight/2);
-        p.ellipse((p.frameCount%100)*(p.windowWidth/100),p.height-20, 10, 10);
+        p.line((count%100)*(p.windowWidth/100)+5, p.height-20, p.windowWidth/2, p.windowHeight/2);
+        p.ellipse((count%100)*(p.windowWidth/100)+5,p.height-20, 10, 10);
+        count += 1;
     };
     p.windowResized = function windowResized(){
         p.resizeCanvas(p.windowWidth, p.windowHeight);
+        p.background(0);
+        count = 0;
     }
   };
   
