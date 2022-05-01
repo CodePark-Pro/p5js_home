@@ -1,3 +1,9 @@
+html {
+  background-color: #000;  /* 両端部分に付ける背景色(黄緑色) */
+}
+body {
+  margin: 30;
+}
 .flex{
   display: flex;
 }
