@@ -1,8 +1,14 @@
 let sketch4 = function(p){
     p.setup = function setup() {
-        p.createCanvas(p.windowWidth/6, p.windowHeight/4);
+        let w=p.windowWidth/6;
+        let h=p.windowHeight/4;
+        if(p.windowWidth < p.windowHeight){
+            w=200;
+            h=200; 
+        }
+        p.createCanvas(w, h);
         p.background(255);
-        };
+    };
     p.draw = function draw() {
         for(let i=0; i<p.width+25; i+=50){
             for(j=0;j<p.height+25;j+=50){
@@ -12,7 +18,13 @@ let sketch4 = function(p){
         }
     };
     p.windowResized = function windowResized(){
-        p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+        let w=p.windowWidth/6;
+        let h=p.windowHeight/4;
+        if(p.windowWidth < p.windowHeight){
+            w=200;
+            h=200;
+        }
+        p.resizeCanvas(w, h);
         p.background(255);
       };
 };

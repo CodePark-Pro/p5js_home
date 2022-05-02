@@ -1,6 +1,12 @@
 let sketch6 = function(p){
     p.setup = function setup() {
-        p.createCanvas(p.windowWidth/6, p.windowHeight/4);
+        let w=p.windowWidth/6;
+        let h=p.windowHeight/4;
+        if(p.windowWidth < p.windowHeight){
+           w=200;
+           h=200; 
+        }
+        p.createCanvas(w, h);
         p.frameRate(10);
         p.background(10,10,100,50);
         };
@@ -9,7 +15,13 @@ let sketch6 = function(p){
         p.ellipse(p.width/2,p.height/2,p.width,p.height);
     };
     p.windowResized = function windowResized(){
-        p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+        let w=p.windowWidth/6;
+        let h=p.windowHeight/4;
+        if(p.windowWidth < p.windowHeight){
+            w=200;
+            h=200;
+        }
+        p.resizeCanvas(w, h);
         p.background(10,10,100,50);
       };
 };

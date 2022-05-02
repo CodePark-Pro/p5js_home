@@ -9,14 +9,26 @@
 // }
 let sketch1 = function(p){
   p.setup = function setup() {
-    let c = p.createCanvas(p.windowWidth/6, p.windowHeight/4);
+    let w=p.windowWidth/6;
+    let h=p.windowHeight/4;
+    if(p.windowWidth < p.windowHeight){
+        w=200;
+        h=200; 
+    }
+    p.createCanvas(w, h);
     p.background(200);
   };
   p.draw = function draw(){
     p.ellipse(50, 50, 80, 80);
   };
   p.windowResized = function windowResized(){
-    p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+    let w=p.windowWidth/6;
+        let h=p.windowHeight/4;
+        if(p.windowWidth < p.windowHeight){
+            w=200;
+            h=200;
+        }
+        p.resizeCanvas(w, h);
     p.background(200);
   };
 };
