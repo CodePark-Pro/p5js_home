@@ -1,6 +1,6 @@
 let sketch4 = function(p){
     p.setup = function setup() {
-        p.createCanvas(200, 200);
+        p.createCanvas(p.windowWidth/6, p.windowHeight/4);
         p.background(255);
         };
     p.draw = function draw() {
@@ -11,5 +11,9 @@ let sketch4 = function(p){
             }
         }
     };
+    p.windowResized = function windowResized(){
+        p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+        p.background(255);
+      };
 };
 new p5(sketch4,"mit_1");

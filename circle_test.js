@@ -9,11 +9,15 @@
 // }
 let sketch1 = function(p){
   p.setup = function setup() {
-    let c = p.createCanvas(200,200);
+    let c = p.createCanvas(p.windowWidth/6, p.windowHeight/4);
     p.background(200);
   };
   p.draw = function draw(){
     p.ellipse(50, 50, 80, 80);
+  };
+  p.windowResized = function windowResized(){
+    p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+    p.background(200);
   };
 };
 

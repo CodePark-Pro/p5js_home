@@ -11,8 +11,10 @@ body {
 }
 
 .product{
-  width: 15em;
-  height:15em;
+  /*width: 15em;
+  height:15em;*/
+  margin-left: 1em;
+  margin-right: 1em;
   z-index: 0;
 }
 

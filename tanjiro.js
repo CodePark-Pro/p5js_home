@@ -69,7 +69,7 @@
 
 let sketch2 = function(p){
   p.setup = function setup() {
-    p.createCanvas(200,200);
+    p.createCanvas(p.windowWidth/6, p.windowHeight/4);
     p.background(200);
   };
     p.draw = function draw(){
@@ -98,6 +98,10 @@ let sketch2 = function(p){
         p.rect(i*w,j*h, w, h);
       }
     }
+  };
+  p.windowResized = function windowResized(){
+    p.resizeCanvas(p.windowWidth/6, p.windowHeight/4);
+    p.background(200);
   };
 };
 
