@@ -2,19 +2,21 @@ let sketch3 = function(p){
     var count = 0;
     p.setup = function setup() {
         let c = p.createCanvas(p.windowWidth,p.windowHeight/2);
+        p.colorMode(p.HSB,255,255,255);
         p.background(0);
-        //円の塗りつぶしは白(255)
-        p.fill(255);
+        //円の塗りつぶしは白(0)
+        p.fill(0, 0, 255);
         //線の色は緑
-        p.stroke(0, 128, 0);
+        p.stroke(128, 255, 255);
         p.strokeWeight(2);
         p.frameRate(30);
+        
         count = 0;
     };
     p.draw = function draw(){
         let h = p.windowHeight/2;
         if(count%100==0){
-            p.stroke(p.random(128,255), p.random(128), p.random(128,255));
+            p.stroke(p.random(255), 255,255);
         }
         //線を引く(x座標は変化するのでi,y座標は一定、もう一点は固定x=240,y=60)
         p.line((count%100)*(p.windowWidth/100)+5, 20, p.windowWidth/2, h/2);
